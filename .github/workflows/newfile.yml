@@ -54,6 +54,6 @@ jobs:
         shell: bash
     steps:
     - name: testing groovy file
-      run : groovyfile.groovy
+      run : groovy groovyfile.groovy
 
 
