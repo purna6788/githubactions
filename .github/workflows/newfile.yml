@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: ping google.com
       run: ping -c 3 8.8.8.8 || true
-      shell: bash
+
   megastar:
     name: 'MegaJob'
     runs-on: "ubuntu-latest"
@@ -29,8 +29,21 @@ jobs:
       run:
         shell: bash
     steps:
-    - name: check new method
-      run: pwd
-      #shell: bash 
+    - name: checking pwd
+      run: pwd 
 
-  #rebelstar:
+  rebelstar:
+    name: 'RebelJob'
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: Install groovy
+      run: sudo apt-get update && sudo apt-get install -y groovy
+    
+    -name: Execute Groovy Script
+     run: |               # here this symbol "|" used in github actions for multiline code
+      echo 'println "Hello, Groovy!"' > script.groovy
+      groovy script.groovy
+
