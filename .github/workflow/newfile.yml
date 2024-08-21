@@ -1,0 +1,27 @@
+# This is demo workflow file to test github actions
+
+# notes
+
+# name = Display name of the job
+# 'on' = useful to trigger pipeline , on what event build should trigger eg : push , pull
+# for reference https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+# we can use cron schedule in 'on option'
+
+name: 'Demo work flow' 
+on:
+  push
+
+jobs: 
+  superstar:
+    name: 'SuperJob'
+    runs-on: 'ubuntu-latest'
+    defaults: 
+      run:
+        shell: bash
+    steps:
+    - name: ping google.com
+      run: ping -c 3 www.google.com
+      shell: bash
+  #megastar:
+
+  #rebelstar:
