@@ -54,6 +54,9 @@ jobs:
         shell: bash
     steps:
     - name: groovy version 
-      run : groovy --version
+      run : |
+        groovy --version
+        groovy script.groovy
+
 
 
