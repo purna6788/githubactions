@@ -41,15 +41,19 @@ jobs:
     steps:
     - name: Install groovy
       run: sudo apt-get update && sudo apt-get install -y groovy
-    
-    # -name: Execute Groovy Script
-    #  run: |               # here this symbol "|" used in github actions for multiline code
-    #   echo 'println "Hello, Groovy!"' > script.groovy
-    #   groovy script.groovy
-
     - name: Execute Groovy Script
       run: |               # Here, the "|" symbol is used in GitHub Actions for multiline code
         echo 'println "Hello, Groovy!"' > script.groovy
         groovy script.groovy
+  
+  phanee:
+    name: 'PhaneeJob'
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: testing groovy file
+      run : groovyfile.groovy
 
 
