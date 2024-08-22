@@ -1,7 +1,17 @@
 name: 'blabla Workflow ' 
 on:
-  workflow_dispatch
-
+  workflow_dispatch   # this workflow_dispatch used to run the job manually 
+    inputs:
+      name:
+        description: 'Enter your name'
+        required: true
+        default: 'phanee'
+        type: string
+# refer here
+# https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
+# This is similar to Build with params options in jenkins pipeline 
+# In github actions we use workflow_dispatch  we have here similar to jenkins 3 params 
+# choice,boolean and string , above eg is string param
 jobs: 
   megastar:
     name: 'MegaJob'
