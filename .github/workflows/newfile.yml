@@ -46,14 +46,4 @@ jobs:
       run: |               # Here, the "|" symbol is used in GitHub Actions for multiline code
         echo 'println "Hello, Groovy!"' > script.groovy
         groovy script.groovy
-  phanee:
-    name: 'PhaneeJob'
-    runs-on: "ubuntu-latest"
-    steps:
-    - name: Install groovy
-      run: sudo apt-get update && sudo apt-get install -y groovy
-    - name: Execute Groovy Script
-      run: |
-        groovy --version  > script2.groovy
-        groovy script2.groovy
 
