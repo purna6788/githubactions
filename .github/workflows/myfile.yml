@@ -1,4 +1,4 @@
-name: 'Demo work flow 2' 
+name: 'megaworkflow' 
 on:
   push
 
