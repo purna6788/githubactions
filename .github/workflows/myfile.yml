@@ -1,4 +1,4 @@
-name: 'Demo work flow' 
+name: 'Demo work flow 2' 
 on:
   push
 
