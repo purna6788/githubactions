@@ -23,7 +23,7 @@ on:
 
 jobs: 
   megastar:
-    if: ${{ github.event.inputs.ENVIRONMENT == 'DEV' }}
+    if: ${{ github.event.inputs.environment == 'DEV' }}
     name: 'MegaJob'
     runs-on: "ubuntu-latest"
     defaults:
@@ -34,10 +34,9 @@ jobs:
       run: pwd 
 
   rebelstar:
-    if: ${{ github.event.inputs.ENVIRONMENT == 'PROD' }}
+    if: ${{ github.event.inputs.environment == 'PROD' }}
     name: 'RebelJob'
     runs-on: "ubuntu-latest"
-    needs: megastar
     defaults:
       run:
         shell: bash
