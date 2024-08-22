@@ -1,6 +1,10 @@
-name: 'megaworkflow' 
+name: 'Rebel Workflow' 
 on:
-  push
+  workflow_run:
+    workflows: ["Demo Workflow"]
+    branches: [master]
+    types:
+      - completed 
 
 jobs: 
   superstar:
