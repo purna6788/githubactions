@@ -1,0 +1,14 @@
+name: 'Demo Workflow' 
+on:
+  workflow_dispatch
+
+jobs: 
+  megastar:
+    name: 'MegaJob'
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: checking pwd
+      run: pwd 
