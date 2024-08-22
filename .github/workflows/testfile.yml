@@ -12,6 +12,16 @@ on:
         required: true
         default: 'phanee'
         type: string
+      environment:
+        description: 'Environment to run tests on'
+        type: environment
+        required: true
+        default: 'prod'
+        type: choice
+        options:
+        - dev
+        - prod 
+
 jobs: 
   megastar:
     name: 'MegaJob'
