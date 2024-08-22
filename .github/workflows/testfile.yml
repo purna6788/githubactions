@@ -14,7 +14,6 @@ on:
         type: string
       environment:
         description: 'Environment to run tests on'
-        type: environment
         required: true
         default: 'prod'
         type: choice
