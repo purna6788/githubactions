@@ -1,0 +1,15 @@
+name: 'Demo work flow' 
+on:
+  push
+
+jobs: 
+  superstar:
+    name: 'SuperJob'
+    runs-on: 'ubuntu-latest'
+    defaults: 
+      run:
+        shell: bash
+    steps:
+    - name: ping google.com
+      run: ping -c 3 8.8.8.8 || true
+      echo "hello superstar this is phanee"
