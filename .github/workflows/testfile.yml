@@ -18,11 +18,12 @@ on:
         default: 'prod'
         type: choice
         options:
-        - dev
-        - prod 
+        - DEV
+        - PROD 
 
 jobs: 
   megastar:
+    if: ${{ github.event.inputs.ENVIRONMENT == 'DEV' }}
     name: 'MegaJob'
     runs-on: "ubuntu-latest"
     defaults:
@@ -31,3 +32,19 @@ jobs:
     steps:
     - name: checking pwd
       run: pwd 
+
+  rebelstar:
+    if: ${{ github.event.inputs.ENVIRONMENT == 'PROD' }}
+    name: 'RebelJob'
+    runs-on: "ubuntu-latest"
+    needs: megastar
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: Install groovy
+      run: sudo apt-get update && sudo apt-get install -y groovy
+    - name: Execute Groovy Script
+      run: |            
+        echo 'println "Hello, Groovy!"' > script.groovy
+        groovy script.groovy
