@@ -1,8 +1,8 @@
 name: 'Rebel Workflow' 
 on:
   workflow_run:
-    workflows: ["Demo Workflow"]
-    branches: [master]
+    workflows: ["Demo Workflow"] # using this we can restrict the job on workflow level this will run after 
+    branches: [master]           # finishing the Demo workflow 
     types:
       - completed 
 
